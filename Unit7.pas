@@ -51,10 +51,10 @@ zqry1.SQL.Clear;
 zqry1.SQL.Add('insert into user values(null,"'+edt1.Text+'","'+edt2.Text+'")');
 zqry1.ExecSQL ;
 
-zqry1.SQL.Clear;
-zqry1.SQL.Add('select * from user');
-zqry1.Open;
-Showmessage('DATA BERHASIL DI SIMPAN');
+  zqry1.SQL.Clear;
+  zqry1.SQL.Add('select * from user');
+  zqry1.Open;
+  Showmessage('Akun Berhasil Dibuat')
 end;
 
 procedure TForm7.btn3Click(Sender: TObject);

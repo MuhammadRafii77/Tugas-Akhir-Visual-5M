@@ -15,8 +15,8 @@ object AppForm: TAppForm
   PixelsPerInch = 96
   TextHeight = 13
   object grp1: TGroupBox
-    Left = 32
-    Top = 64
+    Left = 40
+    Top = 72
     Width = 321
     Height = 209
     TabOrder = 0
@@ -51,13 +51,22 @@ object AppForm: TAppForm
       Text = '1234'
     end
     object btn1: TButton
-      Left = 48
+      Left = 40
       Top = 136
       Width = 75
       Height = 25
       Caption = 'LOGIN'
       TabOrder = 2
       OnClick = btn1Click
+    end
+    object btn2: TButton
+      Left = 144
+      Top = 136
+      Width = 73
+      Height = 25
+      Caption = 'BUAT AKUN'
+      TabOrder = 3
+      OnClick = btn2Click
     end
   end
   object mm1: TMainMenu
@@ -96,5 +105,34 @@ object AppForm: TAppForm
       Visible = False
       OnClick = Logout1Click
     end
+  end
+  object con1: TZConnection
+    ControlsCodePage = cGET_ACP
+    UTF8StringsAsWideField = False
+    AutoEncodeStrings = False
+    AutoCommit = False
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'sepeda'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 'C:\Users\ACER\Downloads\Zeos703\Zeos703\libmysql.dll'
+    Left = 304
+    Top = 96
+  end
+  object zqryLogin: TZQuery
+    Connection = con1
+    Active = True
+    SQL.Strings = (
+      'select * from user')
+    Params = <>
+    Left = 304
+    Top = 200
+  end
+  object dLogin: TDataSource
+    DataSet = zqryLogin
+    Left = 304
+    Top = 144
   end
 end
